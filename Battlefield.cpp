@@ -29,9 +29,23 @@ void Battlefield::createBattlefield()
     }
 }
 
+
 void Battlefield::setRobot(Robot r)
 {
     battlefield[r.getY()-1][r.getX()-1] = 'R';
+}
+void Battlefield::deleteRobot(Robot r)
+{
+    battlefield[r.getY()-1][r.getX()-1] = 'R';
+}
+
+void Battlefield::setRoboCop(RoboCop r)
+{
+    battlefield[r.getY()-1][r.getX()-1] = 'C';
+}
+void Battlefield::deleteRoboCop(RoboCop r)
+{
+    battlefield[r.getY()-1][r.getX()-1] = '*';
 }
 
 void Battlefield::printBattlefield()
@@ -52,6 +66,7 @@ void Battlefield::printBattlefield()
 
     for(int i =0; i<width; i++)
         cout << " - +";
+    cout << endl << endl;
 }
 
 void Battlefield::clearBattlefield()
@@ -62,4 +77,13 @@ void Battlefield::clearBattlefield()
     }
     delete[] battlefield;
     cout << "Battlefield clear";
+}
+
+char Battlefield::getCoordinateValue(int x, int y){
+    if (x >= 0 && x < width && y >= 0 && y < height) {
+        return battlefield[y][x];
+    } else {
+        // Return a default value (e.g., '#' for out-of-bounds cells)
+        return '#';
+    }
 }
