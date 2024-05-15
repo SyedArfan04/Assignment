@@ -17,10 +17,10 @@ class Battlefield {
     Battlefield(int w, int h);
 
     void setWidth(int w);
-    int getWidth(){return width;}
+    int getWidth()const {return width;}
 
     void setHeight(int h);
-    int getHeight(){return height;}
+    int getHeight()const {return height;}
 
     void createBattlefield();
 
@@ -34,7 +34,7 @@ class Battlefield {
 
     void clearBattlefield();
 
-    char getCoordinateValue(int x, int y);
+    char getCoordinateValue(int x, int y) const;
 
     ~Battlefield(){ clearBattlefield(); }
 };

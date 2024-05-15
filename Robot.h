@@ -9,16 +9,18 @@ using namespace std;
 class Battlefield;
 
 class Robot{
-    string type;
-    string name;
+   protected:
+    string rtype;
+    string rname;
     int Xc;
     int Yc;
-    Battlefield* battlefield;
+    const Battlefield& battlefield;
+
 
    public:
     Robot() = default;
 
-    Robot(string name, string type, int Xc, int Yc);
+    Robot(string name, string type, int Xc, int Yc, const Battlefield& battlefield);
 
     void setXRobot(int x);
     void setYRobot(int y);
@@ -33,7 +35,8 @@ class Robot{
 class RoboCop: public Robot{
    public:
     RoboCop() = default;
-    RoboCop(string name, string type, int Xc, int Yc): Robot(name, type, Xc, Yc){};
+    RoboCop(string name, string type, int Xc, int Yc, Battlefield& battlefield): Robot(name, type, Xc, Yc, battlefield){};
 
     void move(int x, int y);
+
 };
