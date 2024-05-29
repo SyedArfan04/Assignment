@@ -2,7 +2,7 @@
 
 
 Robot::Robot(string name, string type, int x, int y, const Battlefield& battlefield)
-    : rname(name), rtype(type), Xc(x), Yc(y), battlefield(battlefield) {
+    : rname(name), rtype(type), Xc(y), Yc(x), battlefield(battlefield) {
     // Constructor implementation
 }
 // Robot::Robot(string name, string type, int x, int y, const Battlefield& b) {
@@ -53,7 +53,12 @@ void Robot::look(int x, int y) {
 }
 
 void RoboCop::move(int x, int y){
-    setYRobot(y);
-    setXRobot(x);
+    setYRobot(x);
+    setXRobot(y);
+}
+
+void Terminator::move(int x, int y){
+    setYRobot(x);
+    setXRobot(y);
 }
 

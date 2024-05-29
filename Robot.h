@@ -25,7 +25,7 @@ class Robot{
     void setXRobot(int x);
     void setYRobot(int y);
 
-    void look(int x, int y);
+    virtual void look(int x, int y);
 
     int getY(){return Yc;}
     int getX(){return Xc;}
@@ -36,6 +36,16 @@ class RoboCop: public Robot{
    public:
     RoboCop() = default;
     RoboCop(string name, string type, int Xc, int Yc, Battlefield& battlefield): Robot(name, type, Xc, Yc, battlefield){};
+
+    void move(int x, int y);
+
+};
+
+
+class Terminator: public Robot{
+   public:
+    Terminator() = default;
+    Terminator(string name, string type, int Xc, int Yc, Battlefield& battlefield): Robot(name, type, Xc, Yc, battlefield){};
 
     void move(int x, int y);
 
