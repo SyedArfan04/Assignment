@@ -31,15 +31,6 @@ void Battlefield::createBattlefield()
 }
 
 
-void Battlefield::setRobot(Robot r)
-{
-    // if (r.getY() > )
-    battlefield[r.getY()][r.getX()] = 'R';
-}
-void Battlefield::deleteRobot(Robot r)
-{
-    battlefield[r.getY()-1][r.getX()-1] = 'R';
-}
 
 void Battlefield::setRoboCop(RoboCop r)
 {
@@ -47,7 +38,7 @@ void Battlefield::setRoboCop(RoboCop r)
 }
 void Battlefield::deleteRoboCop(RoboCop r)
 {
-    battlefield[r.getY()-1][r.getX()-1] = '*';
+    battlefield[r.getY()][r.getX()] = '*';
 }
 
 void Battlefield::printBattlefield()
