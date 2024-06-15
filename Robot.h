@@ -24,6 +24,7 @@ public:
     void setXRobot(int x);
     void setYRobot(int y);
 
+    virtual char symbol() = 0;
     virtual void action(int x, int y) = 0;
 
     int getY() { return Yc; }
@@ -60,17 +61,22 @@ public:
     RoboCop() = default;
     RoboCop(std::string name, std::string type, int Xc, int Yc, Battlefield &battlefield) : Robot(name, type, Xc, Yc, battlefield){};
 
+    char symbol();
     void move(int x, int y) override;
     void seeing(int x, int y) override;
     void shoting() override;
     void action(int x, int y) override;
 };
 
-// class Terminator : public movingRobot, seeingRobot, steppingRobot
-// {
-// public:
-//     Terminator() = default;
-//     Terminator(string name, string type, int Xc, int Yc, Battlefield &battlefield) : Robot(name, type, Xc, Yc, battlefield){};
+class Terminator : public movingRobot, seeingRobot, steppingRobot
+{
+public:
+    Terminator() = default;
+    Terminator(string name, string type, int Xc, int Yc, Battlefield &battlefield) : Robot(name, type, Xc, Yc, battlefield){};
 
-//     void move(int x, int y);
-// };
+    char symbol();
+    void move(int x, int y) override;
+    void seeing(int x, int y) override;
+    void stepping() override;
+    void action(int x, int y) override;
+};

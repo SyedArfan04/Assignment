@@ -13,6 +13,10 @@ void Robot::setYRobot(int y)
     Yc = y;
 }
 
+char RoboCop::symbol(){
+    return 'C';
+}
+
 void RoboCop::move(int x, int y)
 {
     setYRobot(x);
@@ -58,11 +62,34 @@ void RoboCop::shoting()
 
 void RoboCop::action(int x, int y)
 {
+    seeing(x,y);
     move(x, y);
+    shoting();
+    shoting();
+    shoting();
 }
 
-// void Terminator::move(int x, int y)
-// {
-//     setYRobot(x);
-//     setXRobot(y);
-// }
+char Terminator::symbol()
+{
+    return 'T';
+}
+void Terminator::move(int x, int y)
+{
+    setYRobot(x);
+    setXRobot(y);
+}
+
+void Terminator::seeing(int x, int y){
+    cout << "this terminator is seeing" << endl;
+}
+
+void Terminator::stepping(){
+    cout << "this terminator is stepping" << endl;
+}
+
+void Terminator::action(int x, int y){
+    seeing(x, y);
+    stepping();
+    move(x,y);
+
+}

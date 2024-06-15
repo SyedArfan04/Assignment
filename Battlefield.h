@@ -5,7 +5,6 @@
 using namespace std;
 
 class Robot;
-class RoboCop;
 
 class Battlefield {
     int width;
@@ -24,11 +23,8 @@ class Battlefield {
 
     void createBattlefield();
 
-    void setRobot(Robot r);
-    void deleteRobot(Robot r);
-
-    void setRoboCop(RoboCop r);
-    void deleteRoboCop(RoboCop r);
+    void setRobot(Robot *r);
+    void deleteRobot(Robot *r);
 
     void printBattlefield();
 

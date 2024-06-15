@@ -32,13 +32,13 @@ void Battlefield::createBattlefield()
 
 
 
-void Battlefield::setRoboCop(RoboCop r)
+void Battlefield::setRobot(Robot *r)
 {
-    battlefield[r.getY()][r.getX()] = 'C';
+    battlefield[r->getY()][r->getX()] = r->symbol();
 }
-void Battlefield::deleteRoboCop(RoboCop r)
+void Battlefield::deleteRobot(Robot *r)
 {
-    battlefield[r.getY()][r.getX()] = '*';
+    battlefield[r->getY()][r->getX()] = '*';
 }
 
 void Battlefield::printBattlefield()
